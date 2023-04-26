@@ -448,7 +448,7 @@
       </nav>
 
       <div class="text-box">
-        <h1>Computer Science University</h1>
+        <h1>Praiseland College</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
           repellendus at vero ducimus voluptate explicabo. <br />
@@ -613,8 +613,8 @@
 
     <section class="cta">
       <h1>
-        Enroll for Our Various Online Courses <br />
-        Anywhere From The World
+        Enroll your wards/children today <br />
+        For a path to set higher standard
       </h1>
       <a href="" class="hero-btn">CONTACT US</a>
     </section>

@@ -21,3 +21,5 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/signup', [SignUpController::class, 'signup'])->name('signup');
 
+Route::post('/submitSignUp', [SignupController::class, 'submitSignUp'])->name('submitSignUp');
+
