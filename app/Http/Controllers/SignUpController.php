@@ -50,7 +50,7 @@ class SignUpController extends Controller
             'confirmPassword'=>$confirmPassword,
             'gender'=>$request->gender
         ]);
-        return view('login');
+        return back()->with("msg", "<div class='alert alert-success'> <span> Sign Up Successfully </span> </div>");
     }
 
 }    
