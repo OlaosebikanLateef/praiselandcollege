@@ -3,6 +3,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 
-Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 
@@ -30,4 +32,11 @@ Route::get('/editUsers/{id}', [UserController::class, 'editUsers'])->name('editU
 
 
 Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+
+Route::post('/updateUser/{id}', [UserController::class, 'updateUser'])->name('updateUser')->middleware('auth');
+
+Route::get('/submitLogin/{id}', [LoginController::class, 'submitLogin'])->name('submitLogin');
+
+Route::get('/viewDashboard', [DashboardController::class, 'viewDashboard'])->name('viewDashboard');
+
 

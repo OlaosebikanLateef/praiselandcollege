@@ -54,15 +54,15 @@
 					<input class="form-control" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Your Password">
           </div>
 			</div>
-		  
+			<div class="container">
 			<div class="form-check">
 				<div class="col-sm-2"></div>
-				<input type="radio" name="gender" class="form-check-input" id="gender" value="male[]">
+				<input type="radio" name="gender" class="form-check-input" id="gender" value="Male">
 				<label for="male" class="form-check-label has-success">Male</label>
             </div>
 			<div class="form-check">
 				<div class="col-sm-2"></div>
-				<input type="radio" name="gender" class="form-check-input" id="gender" value="female[]">
+				<input type="radio" name="gender" class="form-check-input" id="gender" value="Female">
 				<label for="male" class="form-check-label has-success">Female</label>
             </div>
             </div>

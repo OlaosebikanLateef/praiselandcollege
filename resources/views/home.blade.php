@@ -25,7 +25,7 @@
     min-height: 100vh;
     width: 100%;
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-      url(image/me.png);
+      url(image/schoolbig.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -390,7 +390,7 @@
     margin: 160px auto;
     width: 80%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url(https://images.unsplash.com/photo-1613662449996-35130a75be10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);
+      url(image/);
     background-position: center;
     background-size: cover;
     border-radius: 10px;
@@ -502,29 +502,23 @@
 
       <div class="row">
         <div class="campus-col">
-          <img
-          src="image/me.png"
-          />
+            <img src="{{ asset('image/facility1.jpg') }}" style="width: 100%; height:20rem" alt="">
           <div class="layer">
-            <h3>BERLIN</h3>
+            <h3>OTTA</h3>
           </div>
         </div>
 
         <div class="campus-col">
-          <img
-            src="image/me.png"
-          />
+        <img src="{{ asset('image/facility1.jpg') }}" style="width: 100%; height:20rem" alt="">
           <div class="layer">
-            <h3>PARIS</h3>
+            <h3>IJOKO</h3>
           </div>
         </div>
 
         <div class="campus-col">
-          <img
-            src="image/me.png"
-          />
+        <img src="{{ asset('image/facility1.jpg') }}" style="width: 100%; height:20rem" alt="">
           <div class="layer">
-            <h3>LONDON</h3>
+            <h3>SANGO</h3>
           </div>
         </div>
       </div>
@@ -538,9 +532,7 @@
 
       <div class="row">
         <div class="facilities-col">
-          <img
-            src="images/https://i.pinimg.com/originals/79/b1/5e/79b15e3c40ee8c36fafa4b8f02ec38f5.png"
-          />
+        <img src="{{ asset('image/library.jpg') }}" style="width: 100%; height:20rem" alt="">
           <h3>World Class Library</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
@@ -549,10 +541,8 @@
         </div>
 
         <div class="facilities-col">
-          <img
-            src="images/https://i.pinimg.com/originals/79/b1/5e/79b15e3c40ee8c36fafa4b8f02ec38f5.png"
-          />
-          <h3>Tasty and Healthy Food</h3>
+        <img src="{{ asset('image/laboratory.jpg') }}" style="width: 100%; height:20rem" alt="">
+          <h3>State of the art laboratory</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
             dolor sit amet.
@@ -560,9 +550,7 @@
         </div>
 
         <div class="facilities-col">
-          <img
-            src="images/https://i.pinimg.com/originals/79/b1/5e/79b15e3c40ee8c36fafa4b8f02ec38f5.png"
-          />
+        <img src="{{ asset('image/stad.jpg') }}" style="width: 100%; height:20rem" alt="">
           <h3>Largest Play Ground</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
@@ -581,7 +569,7 @@
       </p>
 
       <div class="testimonial-col flex-col">
-        <img src="images/user1.jpg" />
+      <img src="{{ asset('image/me3.jpg') }}" style="width: 50%; height:20rem" alt="">
         <div>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga harum
@@ -590,12 +578,12 @@
             dolor sit amet, consectetur adipisicing elit. Itaque sint sed
             consequuntur reprehenderit tempore laborum beatae nostrum fugit.
           </p>
-          <h3>Christiana Brown</h3>
+          <h3>Lateef Olaosebikan</h3>
         </div>
       </div>
 
       <div class="testimonial-col">
-        <img src="images/user2.jpg" />
+      <img src="{{ asset('image/me.png') }}" style="width: 50%; height:20rem" alt="">
         <div>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga harum
@@ -604,7 +592,7 @@
             dolor sit amet, consectetur adipisicing elit. Doloribus sequi ad
             repellendus debitis voluptates error aliquam ex officiis.
           </p>
-          <h3>John Smith</h3>
+          <h3>Lateef Olaosebikan</h3>
         </div>
       </div>
     </section>

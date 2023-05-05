@@ -19,8 +19,8 @@
         </div>
         <div class="col-sm-6">
         <h1>Login Here</h1> <br> 
-        <a href="{{ route('home')}}">Home</a>
-        <form>
+        
+        <form action=" {{ route('home')}}" method="get"> 
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -36,6 +36,8 @@
               </div> -->
               <button type="submit" class="btn btn-primary">Submit</button> <br><br>
               <p>Don't have an account? <a href="{{ route('signup')}}">Sign Up Here</a></p>
+
+              <a href="{{ route('home')}}">Take me back to homepage   </a>
           </form>
         </div>
         <div class="col-sm-3">
