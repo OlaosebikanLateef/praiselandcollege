@@ -35,8 +35,8 @@ Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('del
 
 Route::post('/updateUser/{id}', [UserController::class, 'updateUser'])->name('updateUser')->middleware('auth');
 
-Route::get('/submitLogin/{id}', [LoginController::class, 'submitLogin'])->name('submitLogin');
+Route::post('/submitLogin', [LoginController::class, 'submitLogin'])->name('submitLogin');
 
-Route::get('/viewDashboard', [DashboardController::class, 'viewDashboard'])->name('viewDashboard');
+Route::post('/viewDashboard', [DashboardController::class, 'viewDashboard'])->name('viewDashboard');
 
 
