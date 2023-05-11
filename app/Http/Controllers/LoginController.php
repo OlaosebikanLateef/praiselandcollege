@@ -16,6 +16,7 @@ class LoginController extends Controller
        
 //login function (query must be written to validate the data and adding 'use Illuminate\Support\Facades\Auth;' )
 public function submitLogin(Request $request){
+    //dd($request->all());
     $attribute = $request->validate([
         'email'=>'required',
         'password'=>'required'
@@ -23,7 +24,8 @@ public function submitLogin(Request $request){
     if(!Auth::attempt($attribute)){
         return back()->with("msg", "<div class='alert alert-danger'> <span> Password or Email is Incorrect </span> </div>");
     }else{
-        return back()->with("msg", "<div class='alert alert-success'> <span> Login Successfully </span> </div>");
+        $data = User::where('email', $request->email)->first();
+        return view('dashboard')->with(['data' => $data]) ;
 
     }
     

@@ -8,7 +8,9 @@ use App\Models\User;
 class DashboardController extends Controller
 {
     public function viewDashboard(Request $request){
-        $data = User::get();
-        return view('dashboard')->with(['data'=>$data]);
+        return view('dashboard');
+    }
+    public function profile(Request $request){
+        return view('profile');
     }
 }

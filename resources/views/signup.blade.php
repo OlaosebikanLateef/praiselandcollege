@@ -9,74 +9,85 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
   <body>
-   
-   
-    <a href="{{ route('home')}}">Home</a>
+	<div class="container"> 
+     <div class="row ">
+		<div class="col-sm-6">
+			<img src="{{ asset('image/students.svg') }}" width="100%" alt="">
+		</div>
 
+		<div class="col-sm-6">
   
-	<div class="container">
-	{!! session('msg') !!}
-		<!-- Form Body -->
-		<form action="{{'submitSignUp'}}" method="post" class="form-horizontal">
-			@csrf
-		<div class="form-group has-success">
-				<div class="col-sm-6 has-success">
-				  <h1 class="text-center has-success">Sign Up</h1>
-        		</div>
+  <div class="">
+     {!! session('msg') !!}
+	<!-- Form Body -->
+	<form action="{{'submitSignUp'}}" method="post" class="form-horizontal">
+		@csrf
+	<div class="form-group has-dark">
+			<div class="col-sm-6 has-dark">
+			  <h1 class="text-center has-dark">Sign Up</h1>
 			</div>
-			<div class="form-group has-success">
-				<label class="control-label col-sm-2" for="firstName">First Name</label>
-				<div class="col-sm-6">
-					<input class="form-control" type="text" name="firstName" id="firstName" placeholder="Enter your First Name">
-        </div>
-			</div>
-			<div class="form-group has-success">
-				<label class="control-label col-sm-2" for="lastName">Last Name</label>
-				<div class="col-sm-6">
-					<input class="form-control" type="text" name="lastName" id="lastName" placeholder="Enter your Last Name">
-          </div>
-			</div>
-			<div class="form-group has-success">
-				<label class="control-label col-sm-2" for="email">Email</label>
-				<div class="col-sm-6">
-					<input class="form-control" type="email" name="email" id="email" placeholder="Enter your Email">
-          </div>
-			</div>
-			<div class="form-group has-success">
-				<label class="control-label col-sm-2" for="password">Password</label>
-				<div class="col-sm-6">
-					<input class="form-control" type="password" name="password" id="password" placeholder="Enter Your Password">
-          </div>
-		  </div>
-		  <div class="form-group has-success">
-				<label class="control-label col-sm-2" for="confirmPassword">Confirm Password</label>
-				<div class="col-sm-6">
-					<input class="form-control" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Your Password">
-          </div>
-			</div>
-			<div class="container">
-			<div class="form-check">
-				<div class="col-sm-2"></div>
-				<input type="radio" name="gender" class="form-check-input" id="gender" value="Male">
-				<label for="male" class="form-check-label has-success">Male</label>
-            </div>
-			<div class="form-check">
-				<div class="col-sm-2"></div>
-				<input type="radio" name="gender" class="form-check-input" id="gender" value="Female">
-				<label for="male" class="form-check-label has-success">Female</label>
-            </div>
-            </div>
-	
-			<div class="container">
-				<div class="col-sm-2"></div>
-				<button type="submit" name="submit" class="btn btn-success">Register</button> 
-			</div> <br> <br>
-			<div class="container">
-				<div class="col-sm-2"></div>
-				<p>Already have an account?  <a href="{{ route('login')}}">Login</a></p>
-			</div>
-		</form>
+		</div>
+		<div class="form-group has-dark">
+			<label class="control-label col-sm-2" for="firstName">First Name</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="text" name="firstName" id="firstName" placeholder="Enter your First Name">
 	</div>
+		</div>
+		<div class="form-group has-dark">
+			<label class="control-label col-sm-2" for="lastName">Last Name</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="text" name="lastName" id="lastName" placeholder="Enter your Last Name">
+	  </div>
+		</div>
+		<div class="form-group has-dark">
+			<label class="control-label col-sm-2" for="email">Email</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="email" name="email" id="email" placeholder="Enter your Email">
+	  </div>
+		</div>
+		<div class="form-group has-dark">
+			<label class="control-label col-sm-2" for="password">Password</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="password" name="password" id="password" placeholder="Enter Your Password">
+	  </div>
+	  </div>
+	  <div class="form-group has-dark">
+			<label class="control-label col-sm-2" for="confirmPassword">Confirm Password</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Your Password">
+	  </div>
+		</div>
+		<div class="">
+		<div class="form-check">
+			<div class="col-sm-2"></div>
+			<input type="radio" name="gender" class="form-check-input" id="gender" value="Male">
+			<label for="male" class="form-check-label has-success">Male</label>
+		</div>
+		<div class="form-check">
+			<div class="col-sm-2"></div>
+			<input type="radio" name="gender" class="form-check-input" id="gender" value="Female">
+			<label for="male" class="form-check-label has-success">Female</label>
+		</div>
+		</div>
+
+		<div class="">
+			<div class="col-sm-2"></div>
+			<button type="submit" name="submit" class="btn btn-primary">Register</button> 
+		</div> <br> <br>
+		<div class="">
+			<div class="col-sm-2"></div>
+			<p>Already have an account?  <a href="{{ route('login')}}">Login</a></p>
+		</div>
+		<div class="">
+			<div class="col-sm-2"></div>
+			<p><a href="{{ route('home')}}">Take me back home</a></p>
+		</div>
+	</form>
+</div>
+		</div>
+   </div>
+   </div>
+    
 
 	<!-- Link to JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

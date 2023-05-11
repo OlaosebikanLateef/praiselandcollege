@@ -2,8 +2,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1, initial-scale=1.0" />
-    <title>University Website Design</title>
-    <link rel="stylesheet" href="sch.css" />
+    <title>Praiseland College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,13 +17,7 @@
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css"
     />
     <style>
-        * {
-    padding: 0;
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .header {
+       .header {
     min-height: 100vh;
     width: 100%;
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
@@ -30,403 +26,6 @@
     background-size: cover;
     position: relative;
   }
-  
-  nav {
-    display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav img {
-    width: 150px;
-  }
-  
-  .nav-links {
-    flex: 1;
-    text-align: right;
-  }
-  
-  .nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-  }
-  
-  .nav-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
-  }
-  
-  .nav-links ul li::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: #00d9e0;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-  }
-  
-  .nav-links ul li:hover::after {
-    width: 100%;
-  }
-  
-  .logo-link {
-    text-decoration: none;
-  }
-  
-  .logo {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #fff;
-  }
-  
-  .text-box {
-    width: 70%;
-    color: #fff;
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .text-box h1 {
-    font-size: 58px;
-    font-weight: 650;
-  }
-  
-  .text-box p {
-    margin: 10px 0 40px;
-    font-size: 12px;
-    color: #fff;
-  }
-  
-  .hero-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    border-radius: 1px;
-    border: 1px solid #fff;
-    padding: 12px 34px;
-    font-size: 14px;
-    border-radius: 8px;
-    box-shadow: rgba(12, 12, 12, 0.2) 0px 7px 29px 0px;
-    background: transparent;
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-  }
-  
-  .hero-btn:hover {
-    border: 1px solid #0886bc;
-    /* background: #f44336; */
-    background: #0886bc;
-    transition: 0.6s;
-  }
-  
-  nav .fa {
-    display: none;
-  }
-  
-  @media (max-width: 700px) {
-    .text-box h1 {
-      font-size: 20px;
-    }
-  
-    .nav-links ul li {
-      display: block;
-    }
-  
-    .nav-links {
-      position: absolute;
-      background: #f44336;
-      height: 100vh;
-      width: 200px;
-      top: 0;
-      right: -300px;
-      text-align: left;
-      z-index: 2;
-      transition: 1s;
-    }
-  
-    nav .fa {
-      display: block;
-      color: #fff;
-      margin: 10px;
-      font-size: 22px;
-      cursor: pointer;
-    }
-  
-    .nav-links ul {
-      padding: 30px;
-    }
-  }
-  
-  /*******************course***************************/
-  
-  .course {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
-    margin-bottom: 3rem;
-    margin-top: 1rem;
-  }
-  
-  .course h1 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #222;
-  }
-  
-  p {
-    color: rgb(104, 104, 104);
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
-  }
-  
-  .row {
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .course-col {
-    flex-basis: 31%;
-    background: #ffe7e7;
-    border: 1px solid rgb(137, 137, 137);
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 20px 12px;
-    box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  h3 {
-    text-align: center;
-    font-weight: 600;
-    margin: 10px 0;
-  }
-  
-  .course-col:hover {
-    box-shadow: 0 0 19px 0px rgba(0, 0, 0, 0.2);
-  }
-  
-  @media (max-width: 700px) {
-    .row {
-      flex-direction: column;
-    }
-  }
-  
-  /************************campus*******************************************/
-  
-  .campus {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 50px;
-    margin-bottom: 2rem;
-  }
-  
-  .campus h1 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #222;
-  }
-  
-  .campus-col {
-    flex-basis: 32%;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .campus-col img {
-    width: 100%;
-    display: block;
-  }
-  
-  .layer {
-    background: transparent;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.5s;
-  }
-  
-  .layer:hover {
-    /* background: rgba(226, 0, 0, 0.7); */
-    background: rgba(0, 102, 136, 0.7);
-  }
-  
-  .layer h3 {
-    width: 100%;
-    font-weight: 500;
-    color: #fff;
-    font-size: 26px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    opacity: 0;
-    transition: 0.5s;
-  }
-  
-  .layer:hover h3 {
-    bottom: 49%;
-    opacity: 1;
-  }
-  
-  /**********************facilities**********************/
-  
-  .facilities {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
-    margin-bottom: 2rem;
-  }
-  
-  .facilities h1 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #222;
-  }
-  
-  .facilities-col {
-    flex-basis: 31%;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    text-align: left;
-  }
-  
-  .facilities-col img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  .facilities-col p {
-    padding: 0;
-  }
-  
-  .facilities-col h3 {
-    margin-top: 16px;
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  /*********************testimonial*********************/
-  
-  .testimonial {
-    width: 80%;
-    margin: auto;
-    padding-top: 100px;
-    text-align: center;
-  }
-  
-  .testimonial h1 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #222;
-  }
-  
-  .testimonial-col {
-    flex-basis: 44%;
-    border-radius: 10px;
-    margin-bottom: 7%;
-    text-align: left;
-    background: #ffe7e7;
-    padding: 30px;
-    cursor: pointer;
-    display: flex;
-    border: 1px solid rgb(142, 142, 142);
-    box-shadow: 0 0 19px 0px rgba(95, 94, 94, 0.2);
-  }
-  
-  .testimonial-col img {
-    height: 40px;
-    margin-left: 5px;
-    margin-right: 20px;
-    border-radius: 50%;
-  }
-  
-  .test-p {
-    margin-bottom: 4rem;
-  }
-  
-  .testimonial-col p {
-    padding: 2px;
-    margin-bottom: 1rem;
-  }
-  
-  .testimonial-col h3 {
-    /* margin-top: 14px; */
-    /* padding-top: 1rem; */
-    text-align: center;
-    margin-right: 3rem;
-  }
-  
-  @media (max-width: 700px) {
-    .testimonial-col img {
-      margin-left: 0px;
-      margin-right: 15px;
-    }
-  }
-  
-  /*****************call to action**********/
-  
-  .cta {
-    margin-top: 5rem;
-    margin: 160px auto;
-    width: 80%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url(image/);
-    background-position: center;
-    background-size: cover;
-    border-radius: 10px;
-    text-align: center;
-    padding: 100px 0;
-  }
-  
-  .cta h1 {
-    color: #fff;
-    margin-bottom: 40px;
-    padding: 0;
-  }
-  
-  @media (max-width: 700px) {
-    .cta h1 {
-      font-size: 24px;
-    }
-  }
-  
-  /***************************footer********************************/
-  
-  .footer {
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
-  }
-  
-  .footer p {
-    color: #000;
-  }
-  /* 
-  .footer h4 {
-    margin-bottom: 25px;
-    margin-top: 25px;
-    font-weight: 600;
-  } */
     </style>
   </head>
   <body>
@@ -532,7 +131,7 @@
 
       <div class="row">
         <div class="facilities-col">
-        <img src="{{ asset('image/library.jpg') }}" style="width: 100%; height:20rem" alt="">
+        <img src="{{ asset('image/library.jpg') }}" style="width: 100%; height:20rem" alt="" class="rounded">
           <h3>World Class Library</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
@@ -541,7 +140,7 @@
         </div>
 
         <div class="facilities-col">
-        <img src="{{ asset('image/laboratory.jpg') }}" style="width: 100%; height:20rem" alt="">
+        <img src="{{ asset('image/laboratory.jpg') }}" style="width: 100%; height:20rem" alt="" class="rounded">
           <h3>State of the art laboratory</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
@@ -550,7 +149,7 @@
         </div>
 
         <div class="facilities-col">
-        <img src="{{ asset('image/stad.jpg') }}" style="width: 100%; height:20rem" alt="">
+        <img src="{{ asset('image/stad.jpg') }}" style="width: 100%; height:20rem" alt="" class="rounded">
           <h3>Largest Play Ground</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
@@ -563,13 +162,13 @@
     <!-----------------------------testimonial-------------------------------------->
 
     <section class="testimonial">
-      <h1>What Our Alumni Says</h1>
+      <!-- <h1>What Our Alumni Says</h1>
       <p class="test-p">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </p>
 
       <div class="testimonial-col flex-col">
-      <img src="{{ asset('image/me3.jpg') }}" style="width: 50%; height:20rem" alt="">
+      <img src="{{ asset('image/me3.jpg') }}" style="width: 50%; height:30rem" alt="">
         <div>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga harum
@@ -583,7 +182,7 @@
       </div>
 
       <div class="testimonial-col">
-      <img src="{{ asset('image/me.png') }}" style="width: 50%; height:20rem" alt="">
+      <img src="{{ asset('image/me.png') }}" style="width: 50%; height:30rem" alt="">
         <div>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga harum
@@ -594,7 +193,59 @@
           </p>
           <h3>Lateef Olaosebikan</h3>
         </div>
+      </div> -->
+
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+    <div class="carousel-item active ">
+    <img src="{{ asset('image/facility1.jpg') }}" style="width: 100%; height:30rem" alt="" class="rounded shadow">
+      <div class="carousel-caption d-none d-md-block">
+        <p style="color:#000">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga harum
+            recusandae maiores vitae aperiam, soluta sed voluptatibus quibusdam
+            minus nihil blanditiis dolor accusantium voluptas vel. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit. Doloribus sequi ad
+            repellendus debitis voluptates error aliquam ex officiis.
+          </p>
+          <h3 style="color:#000">Lateef Olaosebikan</h3>
       </div>
+    </div>
+    <div class="carousel-item">
+    <img src="{{ asset('image/facility1.jpg') }}" style="width: 100%; height:30rem" alt="" class="rounded shadow">
+      <div class="carousel-caption d-none d-md-block">
+      <p style="color:#000">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga harum
+            recusandae maiores vitae aperiam, soluta sed voluptatibus quibusdam
+            minus nihil blanditiis dolor accusantium voluptas vel. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit. Doloribus sequi ad
+            repellendus debitis voluptates error aliquam ex officiis.
+          </p>
+          <h3 style="color:#000">Lateef Olaosebikan</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('image/facility1.jpg') }}" style="width:100%; height:30rem" alt="" class="rounded shadow">
+      <div class="carousel-caption d-none d-md-block">
+          <p style="color:#000">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga harum
+            recusandae maiores vitae aperiam, soluta sed voluptatibus quibusdam
+            minus nihil blanditiis dolor accusantium voluptas vel. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit. Doloribus sequi ad
+            repellendus debitis voluptates error aliquam ex officiis.
+          </p>
+          <h3 style="color:#000">Lateef Olaosebikan</h3>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
     </section>
 
     <!-------------------Call to action-------------------------------------->
@@ -639,5 +290,6 @@
         navLinks.style.right = "-300px";
       }
     </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
 </html>
