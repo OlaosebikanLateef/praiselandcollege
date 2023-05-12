@@ -36,11 +36,11 @@
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
             <li><a href="{{ route('home')}}">Home</a></li>
-            <li><a href="">ABOUT</a></li>
+            <li><a href="#aboutUs">ABOUT</a></li>
             <li><a href="{{ route('login')}}">Login</a></li>
             <li> <a href="{{ route('signup')}}">Sign Up</a></li>
             <li><a href="">BLOG</a></li>
-            <li><a href="">CONTACT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
           </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -248,6 +248,32 @@
 </div>
     </section>
 
+
+   <!-------------------About Us------------------------------------->
+   <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-7" id="aboutUs">
+          <h1 class="text-center">About Us</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum natus, recusandae, itaque vero minus 
+          quaerat aliquam nulla earum quod laudantium voluptatum amet vel dolore, similique tempore iure! Quis, velit?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum natus, recusandae, itaque vero minus 
+          quaerat aliquam nulla earum quod laudantium voluptatum amet vel dolore, similique tempore iure! Quis, velit?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum natus, recusandae, itaque vero minus 
+          quaerat aliquam nulla earum quod laudantium voluptatum amet vel dolore, similique tempore iure! Quis, velit?
+        </p>
+      </div>
+      <div class="col-sm-2">
+
+      </div>
+      </div>
+    </div>
+   </section>
+
     <!-------------------Call to action-------------------------------------->
 
     <section class="cta">
@@ -255,10 +281,61 @@
         Enroll your wards/children today <br />
         For a path to set higher standard
       </h1>
-      <a href="" class="hero-btn">CONTACT US</a>
+      <a href="#contact" class="hero-btn">CONTACT US</a>
     </section>
 
     <!------------------------footer---------------------------------->
+
+    <!-- contact section -->
+<section>
+  <section  class="bg-white py-5" id="mywork">
+    <div class="container-lg py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 btn-dark">
+          <div class="section-title text-center ">
+            <h2 id="contact">Contact Us</h2>
+          </div>
+        </div>
+      </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div>
+          <i class="fa-solid fa-1x text-dark fa-envelope mb-3"></i> Email
+          <p class="ms-4">laolaosebikan@gmail.com</p>
+       </div>
+       <div>
+        <i class="fa-solid fa-1x text-dark fa-phone mb-3"></i> Phone
+        <p class="ms-4">08130195938</p>
+     </div>
+     <div>
+      <i class="fa-solid fa-1x text-dark fa-location-dot mb-3"></i> Visit Office
+      <p class="ms-4">Mushin, Lagos</p>
+   </div>
+      </div>
+      <div class="col-md-6">
+        <form action="form-action shadow-lg" method="post">
+          <div class="row ">
+              <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Enter Your Name">
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address" aria-describedby="emailHelp">
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Subject" id="Subject">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" placeholder="Message" id="textarea" style="height: 100px"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+          </div>
+      </div>
+    </div>
+    </div>
+</section>
+<!-- contact section -->
     <hr />
 
     <section class="footer">
@@ -269,10 +346,10 @@
       </p>
 
       <div class="icon">
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-instagram"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-linkedin"></i>
+       <i class="fa-brands fa-facebook"></i>
+       <i class="fa-brands fa-square-instagram"></i>
+       <i class="fa-brands fa-square-twitter"></i>
+       <i class="fa-brands fa-linkedin"></i>
       </div>
 
       <p>Made by @dev_lateef</p>
@@ -290,6 +367,7 @@
         navLinks.style.right = "-300px";
       }
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
 </html>

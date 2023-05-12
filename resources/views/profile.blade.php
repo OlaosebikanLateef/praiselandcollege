@@ -43,24 +43,26 @@
 
         </div >
         <div class="col-sm-4">
-        <form>
+        {!! session('msg') !!}
+        <form action="{{ }}" method="POST">
+        @csrf
             <fieldset disabled>
                     <legend>Profile</legend>
                     <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">First Name</label>
-                    <input type="text" id="disabledTextInput" name="firstName" class="form-control" placeholder="">
+                    <input type="text" id="disabledTextInput" value="{{ $data->firstName }}" name="firstName" class="form-control" placeholder="">
                     </div>
                     <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Last Name</label>
-                    <input type="text" id="disabledTextInput" name="lastName" class="form-control" placeholder="">
+                    <input type="text" id="disabledTextInput" value="{{ $data->lastName }}" name="lastName" class="form-control" placeholder="">
                     </div>
                     <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Email </label>
-                    <input type="text" id="disabledTextInput" name="email" class="form-control" placeholder="">
+                    <input type="text" id="disabledTextInput" value="{{ $data->email }}" name="email" class="form-control" placeholder="">
                     </div>
                     <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Gender </label>
-                    <input type="text" id="disabledTextInput" name="gender" class="form-control" placeholder="">
+                    <input type="text" id="disabledTextInput" value="{{ $data->gender }}" name="gender" class="form-control" placeholder="">
                     </div>
             </fieldset>
           </form>

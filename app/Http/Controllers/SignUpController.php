@@ -33,7 +33,6 @@ class SignUpController extends Controller
         };
         
         $user = User::where('email', $request->email)->first();
-
         if(isset($user)){
             return back()->with("msg", "<div class='alert alert-danger'> <span> Email Already Exist </span> </div>");
         };

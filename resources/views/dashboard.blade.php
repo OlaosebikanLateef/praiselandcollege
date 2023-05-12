@@ -37,6 +37,7 @@
               <li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="{{ route('profile')}}">Profile</a>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link active text-white" href="#"  aria-current="page">Logout</a>
               </li>
@@ -101,8 +102,8 @@
                 </div>
                 <div class="card bg-white shadow-lg mt-5">
                 <div class="card-body">
-                  <h5 class="card-title">Department</h5>
-                  <button type="button" class="btn btn-secondary "  >Check Result</button>
+                  <h5 class="card-title">Results</h5>
+                  <button type="button" class="btn btn-secondary "  > <a class="nav-link active text-white" aria-current="page" href="{{ route('result')}}">Check Result</a></button>
                 </div>
                 </div>
               </div>

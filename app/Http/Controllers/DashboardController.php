@@ -7,10 +7,15 @@ use Illuminate\Http\Request;
 use App\Models\User;
 class DashboardController extends Controller
 {
-    public function viewDashboard(Request $request){
+    public function dashboard(Request $request){
         return view('dashboard');
     }
-    public function profile(Request $request){
-        return view('profile');
+    public function profile(Request $request, $id){
+        $data = User::where('id', $id)->first();
+        return view('profile')->with(['data'=>$data]);
+    }
+
+    public function result(Request $request){
+        return view('result');
     }
 }

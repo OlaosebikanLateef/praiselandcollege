@@ -7,12 +7,15 @@
 	 <!-- CDN LINK for Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
   <body>
 	<div class="container"> 
      <div class="row ">
-		<div class="col-sm-6">
+		<div class="col-sm-6 mt-5">
 			<img src="{{ asset('image/students.svg') }}" width="100%" alt="">
+		<h4 class="mt-5 text-center " style="color:#8E8CB1;">Setting Higher Standard</h4>
 		</div>
 
 		<div class="col-sm-6">
@@ -29,20 +32,20 @@
 		</div>
 		<div class="form-group has-dark">
 			<label class="control-label col-sm-2" for="firstName">First Name</label>
-			<div class="col-sm-6">
-				<input class="form-control" type="text" name="firstName" id="firstName" placeholder="Enter your First Name">
+			<div class="col-sm-6 ">
+				<input class="form-control" type="text" name="firstName" id="firstName" placeholder="Enter Your First Name">
 	</div>
 		</div>
 		<div class="form-group has-dark">
 			<label class="control-label col-sm-2" for="lastName">Last Name</label>
 			<div class="col-sm-6">
-				<input class="form-control" type="text" name="lastName" id="lastName" placeholder="Enter your Last Name">
+				<input class="form-control" type="text" name="lastName" id="lastName" placeholder="Enter Your Last Name">
 	  </div>
 		</div>
 		<div class="form-group has-dark">
 			<label class="control-label col-sm-2" for="email">Email</label>
 			<div class="col-sm-6">
-				<input class="form-control" type="email" name="email" id="email" placeholder="Enter your Email">
+				<input class="form-control" type="email" name="email" id="email" placeholder="Enter Your Email">
 	  </div>
 		</div>
 		<div class="form-group has-dark">
@@ -72,7 +75,9 @@
 
 		<div class="">
 			<div class="col-sm-2"></div>
-			<button type="submit" name="submit" class="btn btn-primary">Register</button> 
+			<button type="submit" name="submit" class="btn btn-primary">
+			<i class="fa fa-user" aria-hidden="true"></i>
+			Register</button> 
 		</div> <br> <br>
 		<div class="">
 			<div class="col-sm-2"></div>

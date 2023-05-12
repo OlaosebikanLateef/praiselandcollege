@@ -37,8 +37,11 @@ Route::post('/updateUser/{id}', [UserController::class, 'updateUser'])->name('up
 
 Route::post('/submitLogin', [LoginController::class, 'submitLogin'])->name('submitLogin');
 
-Route::get('/dashboard', [DashboardController::class, 'viewDashboard'])->name('viewDashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+
+Route::get('/result/{id}', [DashboardController::class, 'result'])->name('result');
+
 
 

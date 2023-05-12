@@ -21,11 +21,12 @@ public function submitLogin(Request $request){
         'email'=>'required',
         'password'=>'required'
     ]);
+   
     if(!Auth::attempt($attribute)){
         return back()->with("msg", "<div class='alert alert-danger'> <span> Password or Email is Incorrect </span> </div>");
     }else{
         $data = User::where('email', $request->email)->first();
-        return view('dashboard')->with(['data' => $data]) ;
+        return view('dashboard')->with(['data' => $data]);
 
     }
     
