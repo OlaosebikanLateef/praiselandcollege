@@ -25,7 +25,7 @@
         <div class="col-sm-6">
         <h1>Login Here</h1> <br> 
         
-        <form action=" {{  route('submitLogin') }}" method="get"> 
+        <form action="" method="post"> 
           @csrf
               <div>  <label for="email" class="form-label">Email address</label></div>
               <div class="mb-3 input-group">
@@ -54,8 +54,7 @@
               <i class="fa fa-sign-in" aria-hidden="true"></i>
               Login
               </button> <br><br>
-              <p>Don't have an account? <a href="{{ route('signup')}}">Sign Up Here</a></p>
-              <p> <a href="{{ route('adminLogin')}}">Login as an admin</a></p>
+
               <a href="{{ route('home')}}">Take me back to homepage   </a>
           </form>
         </div>

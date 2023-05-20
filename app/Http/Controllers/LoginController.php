@@ -13,7 +13,9 @@ class LoginController extends Controller
         return view('login');
        }
 
-       
+       public function adminLogin(Request $request){
+        return view('adminLogin');
+       }
 //login function (query must be written to validate the data and adding 'use Illuminate\Support\Facades\Auth;' )
 public function submitLogin(Request $request){
     //dd($request->all());
@@ -27,10 +29,16 @@ public function submitLogin(Request $request){
     }else{
         $data = User::where('email', $request->email)->first();
         return view('dashboard')->with(['data' => $data]);
-
-    }
-    
+    }   
 }
+
+
+
+ public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
+    }
 
 }
 

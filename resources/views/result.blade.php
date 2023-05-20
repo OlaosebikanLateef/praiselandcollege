@@ -28,7 +28,7 @@
                 <a class="nav-link active text-white" aria-current="page" href="{{ route('home')}}">Home</a>
               </li>
               <li class="nav-item">
-                <a href=" amam"></a>
+                <a href=""></a>
                 <a class="nav-link active text-white" aria-current="page" href="{{ route('dashboard')}}">Dashboard</a>
               </li>
               <li class="nav-item">

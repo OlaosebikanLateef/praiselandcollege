@@ -16,7 +16,6 @@
     <div class="container">
         {!! session('msg') !!}
             <form action="{{ route('updateUser', $data->id) }}" method="post">
-                @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">First Name</label>
                 <input type="text" name="firstName" value="{{ $data->firstName }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
