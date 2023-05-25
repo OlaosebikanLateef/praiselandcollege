@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('confirmPassword');
             $table->string('image');
+            $table->date('dateOfBirth');
             $table->string('subjectId');
             $table->string('hostelID');
             $table->string('studentID');

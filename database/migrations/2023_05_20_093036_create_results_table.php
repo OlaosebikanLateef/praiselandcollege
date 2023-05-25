@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedSmallInteger('resultId')->unique()->nullable();
             $table->string('subjectID');
-            $table->string('test');
-            $table->string('exam');
+            $table->string('examScore');
             $table->string('percentage');
             $table->string('grade');
             $table->string('studentID');

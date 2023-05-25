@@ -18,6 +18,22 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = [];
+     
+    public function teacher(){
+        return $this->hasOne(Teacher::class);
+        
+    }
+    public function classes(){
+        return  $this->belongsTo(Classes::class);
+    }
+
+    public function hostel(){
+        return  $this->belongsTo(Hostel::class);
+    }
+
+    public function result(){
+        return  $this->hasOne(Result::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

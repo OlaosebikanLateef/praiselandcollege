@@ -25,7 +25,7 @@
         <div class="col-sm-6">
         <h1>Login Here</h1> <br> 
         
-        <form action="" method="post"> 
+        <form action="" method="get"> 
           @csrf
               <div>  <label for="email" class="form-label">Email address</label></div>
               <div class="mb-3 input-group">

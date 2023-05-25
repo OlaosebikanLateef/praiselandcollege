@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class hostel extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
-    public function students(){
-        return $this->belongsTo(Students::class);
+    public function user(){
+        return $this->hasMany(User::class);
         
     }
     public function teacher(){

@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ResultController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,8 +50,11 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/adminAccess', [DashboardController::class, 'adminAccess'])->name('adminAccess');
 
-Route::post('/adminLogin', [LoginController::class, 'adminLogin'])->name('adminLogin');
+Route::get('/adminLogin', [LoginController::class, 'adminLogin'])->name('adminLogin');
 
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard')->middleware('auth');
+Route::get('/resultUpload', [ResultController::class, 'resultUpload'])->name('resultUpload');
+
+Route::post('/submitResult', [ResultController::class, 'submitResult'])->name('submitResult');
 

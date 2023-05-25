@@ -8,11 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class subject extends Model
 {
     use HasFactory;
-    public function students(){
-        return $this->belongsTo(Students::class);
+    protected $guarded = [];
+    
+    public function user(){
+        return $this->belongsTo(User::class);
         
     }
     public function teacher(){
         return  $this->hasOne(Teacher::class);
+    }
+
+    public function result(){
+        return  $this->belongsTo(Result::class);
     }
 }
