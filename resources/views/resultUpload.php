@@ -14,8 +14,8 @@
         </div>
         <div class="col-md-6 bg-secondary-subtle border rounded mt-2">
                         <form action="submitResult" method="post">
-
                         <h1 class="mt-2">Enter Student Result</h1>
+                        @csrf
                         <div class="form-group mt-3">
                             <label for="studentID" >Student ID:</label>
                             <input type="number" name=""  class="form-control">
@@ -23,23 +23,12 @@
                     
                         <div class="form-group mt-3">
                             <label for="subject">Subject Name</label>
-                            <select name="subject" id="subject" class="form-control">
-                                <option value="Mathematics">Mathematics</option>
-                                <option value="english">English</option>
-                                <option value="civic">civic</option>
-                                <option value="biology">Biology</option>
-                                <option value="chemistry">Chemistry</option>
-                                <option value="economics">Economics</option>
-                                <option value="commerce">Commerce</option>
-                                <option value="literature">Literature</option>
-                                <option value="crs">CRS</option>
-                                <option value="irs">IRS</option>
-                                <option value="computer">Computer Science</option>
-                                <option value="agriculture">Agricultural Science</option>
-                                <option value="government">Government</option>
-                                <option value="accounting">Accounting</option>
-                                <option value="yoruba">Yoruba</option>
+                            <select name="subject_name" id="subject" class="form-control">
+                                @foreach($subject as $subjects)
+                                <option value="{{$subject->id}}">{{ $subjects->subject_name}}</option>
+                                @endforeach
                             </select>
+                               
                         </div>
                         <div class="form-group mt-3">
                             <label for="exam">Exam Score:</label>

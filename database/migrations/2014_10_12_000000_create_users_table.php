@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedSmallInteger('studentId')->unique()->nullable();
             $table->string('firstName');
             $table->string('lastName');
             $table->string('email')->unique();
@@ -21,11 +20,9 @@ return new class extends Migration
             $table->string('gender');
             $table->date('dateOfBirth');
             $table->string('department');
-            $table->string('image');
-            $table->string('subjectId');
-            $table->string('teacherID');
-            $table->string('hostelID');
-            $table->string('classID');
+            $table->string('image')->nullable();
+            $table->foreignId('hostel_id')->constrained();
+            $table->foreignId('class_id')->constrained();
             $table->timestamps();
         });
     }

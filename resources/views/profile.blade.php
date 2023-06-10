@@ -28,7 +28,7 @@
                 <a class="nav-link active text-white" aria-current="page" href="{{ route('home')}}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active text-white" href="#"  aria-current="page">Logout</a>
+                <a class="nav-link active text-white" href="{{ route('logout')}}"  aria-current="page">Logout</a>
               </li>
             </ul>
           </div>

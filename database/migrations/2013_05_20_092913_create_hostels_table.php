@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('classes', function (Blueprint $table) {
+        Schema::create('hostels', function (Blueprint $table) {
             $table->id();
-            $table->unsignedSmallInteger('classId')->unique()->nullable();
-            $table->string('className');
-            $table->string('teacherID');
+            $table->string('hostelName');
+            $table->foreignId('teacher_id')->constrained();
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('classes');
+        Schema::dropIfExists('hostels');
     }
 };

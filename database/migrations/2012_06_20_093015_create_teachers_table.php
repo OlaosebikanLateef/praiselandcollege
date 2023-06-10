@@ -13,17 +13,14 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedSmallInteger('teacherId')->unique()->nullable();
             $table->string('firstName');
             $table->string('lastName');
             $table->string('title');
             $table->string('password');
             $table->string('confirmPassword');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->date('dateOfBirth');
-            $table->string('subjectId');
-            $table->string('hostelID');
-            $table->string('studentID');
+            $table->foreignId('subject_id')->constrained();
             $table->timestamps();
         });
     }

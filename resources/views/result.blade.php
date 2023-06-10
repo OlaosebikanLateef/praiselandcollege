@@ -41,112 +41,52 @@
     <!-- Nav ends here -->
 
     
-    <div class="container">
-        <div class="row"> 
-        <table class="table table-responsive table-striped table-bordered mt-3">
-    <thead class="bg-info">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Mathematics</th>
-        <th scope="col">Chemistry</th>
-        <th scope="col">Accounting</th>
-        <th scope="col">Chemistry</th>
-        <th scope="col">Lit-in-Eng</th>
-        <th scope="col">Government</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <th scope="row">6</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <th scope="row">7</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <th scope="row">8</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <th scope="row">9</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <th scope="row">10</th>
-        <td>90</td>
-        <td>70</td>
-        <td>65</td>
-        <td>78</td>
-        <td>60</td>
-        <td>50</td>
-      </tr>
-    </tbody>
-  </table>
-        </div>    
+    
+        <div class="container">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <table class="table table-bordered table-responsive table-striped table-bordered mt-3">
+          <thead class="table-primary">
+      
+            <tr>
+              <th scope="col">Result ID</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Exam Score</th>
+              <th scope="col">Test Score</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Lateef</td>
+              <td>Olaosebikan</td>
+              <td>0</td>
+              <td>0</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Lateef</td>
+              <td>Olaosebikan</td>
+              <td>0</td>
+              <td>0</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Lateef</td>
+              <td>Olaosebikan</td>
+              <td>0</td>
+              <td>0</td>
+              <td>A</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="col-2"></div>
     </div>
+  </div>
