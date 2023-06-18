@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ResultController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +38,7 @@ Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('del
 
 Route::post('/updateUser/{id}', [UserController::class, 'updateUser'])->name('updateUser')->middleware('auth');
 
-Route::get('/submitLogin', [LoginController::class, 'submitLogin'])->name('submitLogin');
+Route::post('/submitLogin', [LoginController::class, 'submitLogin'])->name('submitLogin');
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 

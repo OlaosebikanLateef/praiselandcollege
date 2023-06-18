@@ -25,7 +25,7 @@
                             <label for="subject">Subject Name</label>
                             <select name="subject_name" id="subject" class="form-control">
                                 @foreach($subject as $subjects)
-                                <option value="{{$subject->id}}">{{ $subjects->subject_name}}</option>
+                                <option value="{{$subjects->id}}">{{ $subjects->subject_name}}</option>
                                 @endforeach
                             </select>
                                

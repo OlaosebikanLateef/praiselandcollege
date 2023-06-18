@@ -11,7 +11,7 @@ class ResultController extends Controller
 {
     public function resultUpload(Request $request){
     
-    $subject = subject::get();
+    $subject = Subject::get();
 
     return view('resultUpload')->with(['subject'=> $subject]);
 }
@@ -21,6 +21,7 @@ class ResultController extends Controller
     public function submitResult(Request $request){
         
         $attribute = $request->validate([
+        'subject'=>'required',   
         'exam'=>'required',
         'test'=>'required',
         'total'=>'required',
@@ -29,6 +30,7 @@ class ResultController extends Controller
         ]);
 
         Result::create([
+            'subject'=>$request->subject,
             'exam'=>$request->exam, 
             'test'=>$request->test,
             'total'=>$request->total,

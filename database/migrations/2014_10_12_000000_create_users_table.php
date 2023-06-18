@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('lastName');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('gender');
             $table->date('dateOfBirth');
             $table->string('department');
             $table->string('image')->nullable();
+            $table->string('gender');
             $table->foreignId('hostel_id')->constrained();
             $table->foreignId('class_id')->constrained();
             $table->timestamps();

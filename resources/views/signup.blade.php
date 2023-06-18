@@ -31,57 +31,98 @@
 			</div>
 		</div>
 		<div class="form-group has-dark">
-			<label class="control-label col-sm-2" for="firstName">First Name</label>
+			<label class="control-label col-sm-3" for="firstName">First Name</label>
 			<div class="col-sm-6 ">
-				<input class="form-control" type="text" name="firstName" id="firstName" placeholder="Enter Your First Name">
+				<input class="form-control" type="text" name="firstName" id="firstName" placeholder="Enter Your First Name" value="{{old('firstName')}}">
+				<span class="text-danger">@error('firstName') {{$message}} @enderror</span>
 	</div>
 		</div>
 		<div class="form-group has-dark">
-			<label class="control-label col-sm-2" for="lastName">Last Name</label>
+			<label class="control-label col-sm-3" for="lastName">Last Name</label>
 			<div class="col-sm-6">
 				<input class="form-control" type="text" name="lastName" id="lastName" placeholder="Enter Your Last Name">
+				<span class="text-danger">@error('lastName') {{$message}} @enderror</span>
 	  </div>
 		</div>
 		<div class="form-group has-dark">
-			<label class="control-label col-sm-2" for="email">Email</label>
-			<div class="col-sm-6">
+			<label class="control-label col-sm-3" for="email">Email</label>
+			<div class="col-sm-6"> 	
 				<input class="form-control" type="email" name="email" id="email" placeholder="Enter Your Email">
+				<span class="text-danger">@error('email') {{$message}} @enderror</span>
 	  </div>
 		</div>
 		<div class="form-group has-dark">
-			<label class="control-label col-sm-2" for="password">Password</label>
+			<label class="control-label col-sm-3" for="password">Password</label>
 			<div class="col-sm-6">
 				<input class="form-control" type="password" name="password" id="password" placeholder="Enter Your Password">
+				<span class="text-danger">@error('password') {{$message}} @enderror</span>
 	  </div>
 	  </div>
 	  <div class="form-group has-dark">
-			<label class="control-label col-sm-2" for="confirmPassword">Confirm Password</label>
+			<label class="control-label col-sm-3" for="dateOfBirth">D.O.B</label>
 			<div class="col-sm-6">
-				<input class="form-control" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Your Password">
+				<input class="form-control" type="date" name="dateOfBirth" id="dateOfBirth" placeholder="Confirm Your Password">
+				<span class="text-danger">@error('dateOfBirth') {{$message}} @enderror</span>
 	  </div>
 		</div>
+		<div class="form-group has-dark">
+			<label class="control-label col-sm-3" for="department">Department</label>
+			<div class="col-sm-2">
+				<select name="department" id="department">
+					<option value="Art">Art</option>
+					<option value="Science">Science</option>
+					<option value="Commercial">Commercial</option>
+				</select>
+	  </div>
+		</div>
+		<div class="form-group has-dark">
+			<label class="control-label col-sm-3" for="hostel_id" >Choose Hostel</label>
+			<div class="col-sm-2">
+			<select name="hostel_id" id="">
+				@foreach ($data ['hostel'] as $hostel )
+				<option value="{{$hostel->id}}">{{$hostel->hostelName}}</option>
+				@endforeach
+			</select>
+			</div>
+		</div>
+		<div  class="form-group has-dark">
+			<label class="control-label col-sm-3" for="class_id">Choose class</label>
+			<div class="col-sm-2">
+			<select name="class_id" id="">
+				@foreach ($data ['class'] as $class )
+				<option value="{{$class->id}}">{{$class->className}}</option>
+				@endforeach
+			</select>
+		</div>
+		</div>
+		<!-- <div class="form-group has-dark">
+			<label class="control-label col-sm-2" for="image">Upload Passport</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="file" name="image" id="image" placeholder="Confirm Your Password">
+	  </div>
+		</div> -->
 		<div class="">
 		<div class="form-check">
-			<div class="col-sm-2"></div>
+			<div class="col-sm-3"></div>
 			<input type="radio" name="gender" class="form-check-input" id="gender" value="Male">
 			<label for="male" class="form-check-label has-success">Male</label>
 		</div>
 		<div class="form-check">
-			<div class="col-sm-2"></div>
+			<div class="col-sm-3"></div>
 			<input type="radio" name="gender" class="form-check-input" id="gender" value="Female">
 			<label for="male" class="form-check-label has-success">Female</label>
 		</div>
 		</div>
 
-		<div class="">
+		<div class="mt-2" >
 			<div class="col-sm-2"></div>
-			<button type="submit" name="submit" class="btn btn-primary">
+			<button type="submit"  class="btn btn-primary" style="width: 15rem;">
 			<i class="fa fa-user" aria-hidden="true"></i>
 			Register</button> 
-		</div> <br> <br>
+		</div> <br> 
 		<div class="">
 			<div class="col-sm-2"></div>
-			<p>Already have an account?  <a href="{{ route('login')}}">Login</a></p>
+			<span>Already have an account?  <a href="{{ route('login')}}">Login</a></span>
 		</div>
 		<div class="">
 			<div class="col-sm-2"></div>

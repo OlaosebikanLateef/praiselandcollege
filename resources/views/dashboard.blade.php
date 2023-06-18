@@ -46,7 +46,7 @@
 
  
   <div class="container mt-3 mb-3">
-     <h5 class="card-text">Good Afternoon, <span>Lateef!</span></h5>
+     <h5 class="card-text">Good Afternoon, <span>{{$data->firstName}}</span></h5>
   </div>
  <div class="container alert alert-warning alert-dismissible fade show mt-2" role="alert">   <!-- alert -->
     <h4 class="alert-heading">Welcome!</h4>
@@ -60,7 +60,7 @@
         <div class="card" style="width: 16rem; height:19.5rem">
           <img src="{{ ('image/me.png') }}" class="card-img-top" style="height:15rem" alt="...">
         <div class="card-body">
-            <p class="card-text">Welcome, Lateef</p>
+            <p class="card-text">Welcome, {{$data->firstName}}</p>
         </div>
      </div>
         </div>
@@ -68,14 +68,15 @@
         <div class="col-md-3 mt-5" >
             <div class="card bg-white shadow-lg">
                 <div class="card-body">
-                  <h5 class="card-title">Class: SSS3</h5>
-                  <p class="card-text">Student ID: 0000</p>
+                  <h5 class="card-title">Class: {{$data->className}}
+                  </h5>
+                  <p class="card-text">Student ID: {{$data->student_id}}</p>
                 </div>
               </div>
               <div class="card bg-white shadow-lg mt-5">
                 <div class="card-body">
                   <h5 class="card-title">Hostel</h5>
-                  <p class="card-text">Block A</p>
+                  <p class="card-text">{{$data->hostelName}}</p>
                 </div>
               </div>
         </div>
@@ -83,7 +84,7 @@
             <div class="card bg-white shadow-lg">
                 <div class="card-body">
                   <h5 class="card-title">Class Teacher</h5>
-                  <p class="card-text">Mrs. Olaosebikan</p>
+                  <p class="card-text">{{$data->firstName}}</p>
                 </div>
               </div>
               <div class="card bg-white shadow-lg mt-5">
@@ -97,7 +98,7 @@
             <div class="card bg-white shadow-lg">
                 <div class="card-body">
                   <h5 class="card-title">Department</h5>
-                  <p class="card-text">Science</p>
+                  <p class="card-text">{{$data->department}}</p>
                 </div>
                 </div>
                 <div class="card bg-white shadow-lg mt-5">

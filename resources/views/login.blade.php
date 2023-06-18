@@ -25,7 +25,13 @@
         <div class="col-sm-6">
         <h1>Login Here</h1> <br> 
         
-        <form action=" {{  route('submitLogin') }}" method="get"> 
+        <form action=" {{ route('submitLogin') }}" method="post"> 
+          @if(Session::has('success'))
+          <div class="alert alert-success">{{Session::get('success')}}</div>
+          @endif
+          @if(Session::has('fail'))
+          <div class="alert alert-danger">{{Session::get('fail')}}</div>
+          @endif
           @csrf
               <div>  <label for="email" class="form-label">Email address</label></div>
               <div class="mb-3 input-group">
@@ -33,6 +39,10 @@
                   <i class="fa-solid fa-envelope"></i>
                     </span>
                 <input type="email"  name="email" class="form-control border-primary" id="email" aria-describedby="emailHelp">
+                
+                <span class="text-danger">@error('email') {{$message}} @enderror</span>
+           
+               
               </div>
 
               <div>  <label for="password" class="form-label">Password</label> </div>
@@ -40,7 +50,8 @@
                 <span class="input-group-text">
                         <i class="fa-solid fa-key fa-beat-fade"></i>
                     </span>
-                <input type="password" name="password" class="form-control border-primary" id="password">
+                <input type="password" name="password" class="form-control border-primary" id="password"><br>
+                <span class="text-danger">@error('password') {{$message}} @enderror</span>
               </div>
 
               

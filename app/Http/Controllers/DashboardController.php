@@ -5,7 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Hostel;
+use App\Models\Classes;
+use App\Models\Subject;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 class DashboardController extends Controller
 {
     // public function dashboard(Request $request){
@@ -45,10 +50,24 @@ class DashboardController extends Controller
 //     $user = auth()->user(); // Retrieve the authenticated user
 //     return view('dashboard', compact('user'));
 // }
-public function dashboard(){
-    $user = Auth::user();
-    return view('dashboard', compact('user'));
+public function dashboard(Request $request){
+   // dd($request->all());
+  
+    $data = array();
+    if(session::has('loginId')){
+        $data = User::where('id', '=', session::get('loginId'))->first();
+    }
+    return view('dashboard', compact('data'));
 }
 
+public function dashboar(Request $request){
+    $user = Auth::user();
+    $hostel = $user->hostel;
+    $classes = $user->classes;
+    $teacher = $user->teacher;
+
+    return view('dashboard', compact('hostel', 'classes', 'teacher'));
+
+}
 
 }
