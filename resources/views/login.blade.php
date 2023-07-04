@@ -26,12 +26,12 @@
         <h1>Login Here</h1> <br> 
         
         <form action=" {{ route('submitLogin') }}" method="post"> 
-          @if(Session::has('success'))
+          <!-- @if(Session::has('success'))
           <div class="alert alert-success">{{Session::get('success')}}</div>
           @endif
           @if(Session::has('fail'))
           <div class="alert alert-danger">{{Session::get('fail')}}</div>
-          @endif
+          @endif -->
           @csrf
               <div>  <label for="email" class="form-label">Email address</label></div>
               <div class="mb-3 input-group">

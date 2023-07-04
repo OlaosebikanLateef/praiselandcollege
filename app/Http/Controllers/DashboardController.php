@@ -50,24 +50,31 @@ class DashboardController extends Controller
 //     $user = auth()->user(); // Retrieve the authenticated user
 //     return view('dashboard', compact('user'));
 // }
-public function dashboard(Request $request){
-   // dd($request->all());
+// public function dashboard(Request $request){
   
-    $data = array();
-    if(session::has('loginId')){
-        $data = User::where('id', '=', session::get('loginId'))->first();
-    }
-    return view('dashboard', compact('data'));
-}
+//     $data = array();
+//     if(session::has('loginId')){
+//         //dd($request->all());
+  
+//         $data = User::where('id', '=', session::get('loginId'))->first();
+//         $data2 = Hostel::where('id', '=', session::get('loginId'))->first();
+//         $data3 = classes::where('id', '=', session::get('loginId'))->first();
+//         dd($data3->all());
+//         $data4 = Teacher::where('id', '=', session::get('loginId'))->first();
+//     }
+//     return view('dashboard', compact('data', 'data2', 'data3', 'data4'));
+// }
 
-public function dashboar(Request $request){
+public function dashboard(){
+
     $user = Auth::user();
-    $hostel = $user->hostel;
-    $classes = $user->classes;
-    $teacher = $user->teacher;
-
-    return view('dashboard', compact('hostel', 'classes', 'teacher'));
-
+    
+    $hostel = hostel::where('id', Auth::user()->hostel_id)->first();
+    $class = classes::where('id', Auth::user()->class_id)->first();
+    $teacher = teacher::where('id', $class->teacher_id)->first();
+    return view('dashboard', compact('user', 'hostel', 'class', 'teacher'));
 }
+
+
 
 }

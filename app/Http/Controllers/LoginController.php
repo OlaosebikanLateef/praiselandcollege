@@ -22,6 +22,11 @@ class LoginController extends Controller
        {
            return view('adminLogin');
        }
+
+       public function login2(Request $request)
+       {
+           return view('login2');
+       }
 //login function (query must be written to validate the data and adding 'use Illuminate\Support\Facades\Auth;' )
 // public function submitLogin(Request $request){
 //     //dd($request->all());
@@ -38,25 +43,55 @@ class LoginController extends Controller
 //     }
 // }
 
-public function submitLogin(Request $request)
-{
-    $request->validate([
-        'email'=>'required',
-        'password'=> 'required'
-    ]);
-    $user = User::where('email', '=', $request->email)->first();
-    if($user) {
-        if(Hash::check($request->password, $user->password)) {
-            $request->Session()->put('loginId', $user->id);
-            return redirect('dashboard');
-        } else {
-            return back()->with('fail', 'Password do not match.');
-        }
-    } else {
-        return back()->with('fail', 'This email is not registered.');
-    }
-}
+// public function submitLogin(Request $request)
+// {
+ 
+//     $request->validate([
+//         'email'=>'required',
+//         'password'=> 'required'
+//     ]);
+//     $user = User::where('email', '=', $request->email)->first();
+//     if($user) {
+//         if(Hash::check($request->password, $user->password)) {
+//             $request->Session()->put('loginId', $user->id);
+//             return redirect('dashboard');
+//         } else {
+//             return back()->with('fail', 'Password do not match.');
+//         }
+//     } else {
+//         return back()->with('fail', 'This email is not registered.');
+//     }
+// }
 
+// public function submitLogin(Request $request)
+//     {
+//         $credentials = $request->only('email', 'password');
+        
+//         if (Auth::attempt($credentials)) {
+//             // Authentication successful
+//             return redirect()->intended('/dashboard');
+//         } else {
+//             // Authentication failed
+//             return back()->withErrors(['message' => 'Invalid credentials']);
+//         }
+//     }
+    public function submitLogin(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+ 
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+ 
+            return redirect()->intended('dashboard');
+        }
+ 
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+    }
 
 
  public function logout()

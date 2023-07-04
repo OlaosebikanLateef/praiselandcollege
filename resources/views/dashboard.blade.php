@@ -46,7 +46,7 @@
 
  
   <div class="container mt-3 mb-3">
-     <h5 class="card-text">Good Afternoon, <span>{{$data->firstName}}</span></h5>
+     <h5 class="card-text" id="greetings">, </h5>
   </div>
  <div class="container alert alert-warning alert-dismissible fade show mt-2" role="alert">   <!-- alert -->
     <h4 class="alert-heading">Welcome!</h4>
@@ -60,7 +60,10 @@
         <div class="card" style="width: 16rem; height:19.5rem">
           <img src="{{ ('image/me.png') }}" class="card-img-top" style="height:15rem" alt="...">
         <div class="card-body">
-            <p class="card-text">Welcome, {{$data->firstName}}</p>
+            <p class="card-text">{{$user->lastName }} {{$user->firstName}}
+
+            
+            </p>
         </div>
      </div>
         </div>
@@ -68,15 +71,19 @@
         <div class="col-md-3 mt-5" >
             <div class="card bg-white shadow-lg">
                 <div class="card-body">
-                  <h5 class="card-title">Class: {{$data->className}}
+                  <h5 class="card-title">Class: 
+                   {{$class->className ?? "no code"}} 
                   </h5>
-                  <p class="card-text">Student ID: {{$data->student_id}}</p>
+                  <p class="card-text">Student ID: {{$user->id}}</p>
                 </div>
               </div>
               <div class="card bg-white shadow-lg mt-5">
                 <div class="card-body">
                   <h5 class="card-title">Hostel</h5>
-                  <p class="card-text">{{$data->hostelName}}</p>
+                  <p class="card-text">
+                    {{$hostel->hostelName ?? "no code"}}
+                    
+                  </p>
                 </div>
               </div>
         </div>
@@ -84,7 +91,10 @@
             <div class="card bg-white shadow-lg">
                 <div class="card-body">
                   <h5 class="card-title">Class Teacher</h5>
-                  <p class="card-text">{{$data->firstName}}</p>
+                  <p class="card-text">
+                    {{$teacher->lastName ?? "no code"}}
+                   
+                  </p>
                 </div>
               </div>
               <div class="card bg-white shadow-lg mt-5">
@@ -98,7 +108,7 @@
             <div class="card bg-white shadow-lg">
                 <div class="card-body">
                   <h5 class="card-title">Department</h5>
-                  <p class="card-text">{{$data->department}}</p>
+                  <p class="card-text">{{$user->department}}</p>
                 </div>
                 </div>
                 <div class="card bg-white shadow-lg mt-5">
@@ -119,5 +129,21 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  </body>
+<script>
+   var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var greet;
+
+    if (hrs < 12)
+        greet = 'Good Morning';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening';
+
+    document.getElementById('greetings').innerHTML =
+        '<span>' + greet + '</span>, {{$user->firstName}}';
+</script>  
+</body>
 </html>

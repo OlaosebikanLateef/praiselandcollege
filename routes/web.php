@@ -36,11 +36,11 @@ Route::get('/editUsers/{id}', [UserController::class, 'editUsers'])->name('editU
 
 Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
-Route::post('/updateUser/{id}', [UserController::class, 'updateUser'])->name('updateUser')->middleware('auth');
+Route::post('/updateUser/{id}', [UserController::class, 'updateUser'])->name('updateUser');
 
 Route::post('/submitLogin', [LoginController::class, 'submitLogin'])->name('submitLogin');
 
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('user.access');
 
 Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
 
@@ -59,4 +59,6 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashb
 Route::get('/resultUpload', [ResultController::class, 'resultUpload'])->name('resultUpload');
 
 Route::post('/submitResult', [ResultController::class, 'submitResult'])->name('submitResult');
+
+Route::post('/login2', [LoginController::class, 'login2'])->name('login2');
 
