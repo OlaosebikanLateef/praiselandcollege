@@ -24,7 +24,7 @@ class DashboardController extends Controller
     // }
 
     public function profile(){
-        $data = User::all();
+        $data = Auth::user();
         return view('profile', compact('data'));
     }
 

@@ -28,6 +28,9 @@
                 <a class="nav-link active text-white" aria-current="page" href="{{ route('home')}}">Home</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="{{ route('editUsers',  $data->id)}}">Edit Profile</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active text-white" href="{{ route('logout')}}"  aria-current="page">Logout</a>
               </li>
             </ul>
@@ -43,35 +46,32 @@
 
         </div >
         <div class="col-sm-4">
-
-        <div class="card card-default">
-          <div class="card-header">
-            <h1>Profile</h1>
-          </div>
-         
-            <div class="card-content">
-            @foreach ($data as $users)
-              <ul>
-                <li>
-                {{ $users->firstName }}
-                </li>
-                <li>
-                {{ $users->lastName }}
-                </li>
-                <li>
-                {{ $users->email }}
-                </li>
-                <li>
-                {{ $users->gender }}
-                </li>
-              </ul>
-              @endforeach
+        <h1 class="mt-5">My Profile</h1>
+          <form class="mt-5">
+                @csrf
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">First Name</label>
+                <input type="text" name="firstName" value="{{ $data->firstName }}" class="form-control" id="exampleInputEmail1"  readonly aria-describedby="emailHelp">
             </div>
-
-        </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                <input type="text" name="lastName" value="{{ $data->lastName }}" class="form-control" id="exampleInputEmail1"  readonly aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="text" name="email" value="{{ $data->email }}" class="form-control" id="exampleInputEmail1"  readonly aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Gender</label>
+                <input type="text" name="gender" value="{{ $data->gender }}" class="form-control" id="exampleInputEmail1"  readonly aria-describedby="emailHelp">
+            </div>
+           
+            </div>
+        </form>
 
         </div>
         <div class="col-sm-4">
+          
             
         </div>
     </div> 

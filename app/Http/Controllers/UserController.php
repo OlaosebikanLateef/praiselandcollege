@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -12,11 +12,6 @@ class UserController extends Controller
         $data = User::get();
         return view('users')->with(['data'=>$data]);
     }                     
-
-    public function editUsers(Request $request, $id){
-        $data = User::where('id', $id)->first();
-        return view('editUsers')->with(['data'=>$data]);
-    }
    
     public function deleteUser(Request $request, $id){
         $data = User::where('id', $id)->delete();
@@ -24,20 +19,34 @@ class UserController extends Controller
         
     }
 
-    public function  updateUser(Request $request, $id){
-        $attribute = $request->validate([
-            'firstName'=>'required',
-            'lastName'=>'required',
-            'gender'=>'required'
-          ]);
-          $data = User::where('id', $id)->update([
-            'firstName'=>$request->firstName,
-            'lastName'=>$request->lastName,
-            'email'=>$request->email,
-            'gender'=>$request->gender
-          ]);
-          return back()->with("msg", "<div class='alert alert-success'> <span> Updated Successfully </span> </div>");
+
+        public function editUsers(){
+            $data = Auth::user();
+            return view('editUsers', compact('data'));
         }
+
+        public function updateUser(Request $request, $id){
+            $data = auth()->user();
+    
+            $data = $request->validate([
+                'firstName'=>'required',
+                'lastName'=>'required',
+                'email'=>'email',
+                'gender'=>'required'
+            ]);
+
+            $data = User::where('id', $id)->update([
+                'firstName'=> $request->firstName,
+                'lastName'=> $request->lastName,
+                'email'=> $request->email,
+                'gender'=> $request->gender
+            ]);
+
+
+            return back()->with("msg", "<div class='alert alert-success'> <span>Updated Successfully</span> </div>");
+}
+            
+    
 }
 
     

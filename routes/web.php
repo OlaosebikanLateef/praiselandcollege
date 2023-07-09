@@ -36,7 +36,7 @@ Route::get('/editUsers/{id}', [UserController::class, 'editUsers'])->name('editU
 
 Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
-Route::post('/updateUser/{id}', [UserController::class, 'updateUser'])->name('updateUser');
+Route::put('/updateUser/{id}', [UserController::class, 'updateUser'])->name('updateUser');
 
 Route::post('/submitLogin', [LoginController::class, 'submitLogin'])->name('submitLogin');
 
