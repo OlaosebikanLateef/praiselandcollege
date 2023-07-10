@@ -1,0 +1,30 @@
+Subject
+==================
+INSERT INTO subjects SET subject_name ='Physics';
+INSERT INTO subjects SET subject_name ='Biology';
+INSERT INTO subjects SET subject_name ='Mathematics';
+INSERT INTO subjects SET subject_name ='English';
+INSERT INTO subjects SET subject_name ='Government';
+INSERT INTO subjects SET subject_name ='Literature';
+INSERT INTO subjects SET subject_name ='CRK';
+INSERT INTO subjects SET subject_name ='IRK';
+INSERT INTO subjects SET subject_name ='Accounting';
+INSERT INTO subjects SET subject_name ='Commerce';
+INSERT INTO subjects SET subject_name ='Geography';
+INSERT INTO subjects SET subject_name ='Further-Mathematics';
+
+
+
+
+
+Class
+====================
+INSERT INTO classes SET className ='JSS1';
+
+Teacher
+====================
+INSERT INTO teachers SET firstName ='Abimbola', lastName = 'Skima', title = 'Mr', password = '1234', confirmPassword = '1234', dateOfBirth = '06/06/1987', subject_id ='1';
+
+Hostel
+==============
+INSERT INTO hostels SET hostelName ='Block B', teacher_id = '3';

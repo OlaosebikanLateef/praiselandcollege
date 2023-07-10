@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('subject_id')->constrained();
             $table->integer('exam');
             $table->integer('test');
+            $table->integer('total');
             $table->string('grade');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();

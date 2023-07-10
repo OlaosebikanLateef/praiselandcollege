@@ -31,16 +31,16 @@ Route::post('/submitSignUp', [SignupController::class, 'submitSignUp'])->name('s
 
 Route::get('/getUsers', [UserController::class, 'getUsers'])->name('getUsers');
 
-Route::get('/editUsers/{id}', [UserController::class, 'editUsers'])->name('editUsers');
+Route::get('/editUsers/{id}', [UserController::class, 'editUsers'])->name('editUsers')->middleware('auth');
 
 
 Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
-Route::put('/updateUser/{id}', [UserController::class, 'updateUser'])->name('updateUser');
+Route::put('/updateUser/{id}', [UserController::class, 'updateUser'])->name('updateUser')->middleware('auth');
 
 Route::post('/submitLogin', [LoginController::class, 'submitLogin'])->name('submitLogin');
 
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('user.access');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 
 Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
 

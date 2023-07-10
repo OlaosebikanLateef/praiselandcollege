@@ -13,13 +13,13 @@
 <!-- blank col -->
         </div>
         <div class="col-md-6 bg-secondary-subtle border rounded mt-2">
-                        <form action="submitResult" method="post">
+                        <form action="{{'submitResult'}}" method="post">
                         <h1 class="mt-2">Enter Student Result</h1>
                         @csrf
-                        <div class="form-group mt-3">
+                        <!-- <div class="form-group mt-3">
                             <label for="studentID" >Student ID:</label>
                             <input type="number" name=""  class="form-control">
-                        </div>
+                        </div> -->
                     
                         <div class="form-group mt-3">
                             <label for="subject">Subject Name</label>
@@ -44,7 +44,11 @@
                         </div>
                         <div class="form-group mt-3">
                             <label for="grade">Grade</label>
-                            <input type="text" name="grade" id="grade"  class="form-control" readonly>
+                            <input type="text" name="grade" id="grade"  class="form-control" >
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="grade">User ID</label>
+                            <input type="number" name="user_id" id="user_id"  class="form-control" >
                         </div>
                         <button type="submit" class="btn btn-primary mt-3 mb-2">Upload Result</button>
                     </form>

@@ -67,14 +67,19 @@ class DashboardController extends Controller
 
 public function dashboard(){
 
-    $user = Auth::user();
-    
-    $hostel = hostel::where('id', Auth::user()->hostel_id)->first();
-    $class = classes::where('id', Auth::user()->class_id)->first();
-    $teacher = teacher::where('id', $class->teacher_id)->first();
-    return view('dashboard', compact('user', 'hostel', 'class', 'teacher'));
-}
+    if (Auth::check()) {
 
+        $user = Auth::user();
+
+        $hostel = hostel::where('id', Auth::user()->hostel_id)->first();
+        $class = classes::where('id', Auth::user()->class_id)->first();
+        $teacher = teacher::where('id', $class->teacher_id)->first();
+        return view('dashboard', compact('user', 'hostel', 'class', 'teacher'));
+    } else {
+        // User is not authenticated
+        return redirect()->route('login');
+    }
+}
 
 
 }

@@ -26,6 +26,8 @@ class UserController extends Controller
         }
 
         public function updateUser(Request $request, $id){
+
+
             $data = auth()->user();
     
             $data = $request->validate([
@@ -42,10 +44,9 @@ class UserController extends Controller
                 'gender'=> $request->gender
             ]);
 
-
             return back()->with("msg", "<div class='alert alert-success'> <span>Updated Successfully</span> </div>");
-}
-            
+         }  
+              
     
 }
 

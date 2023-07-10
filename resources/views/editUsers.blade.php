@@ -11,9 +11,8 @@
 <body>
     
 
-    <h1>Login Page</h1>
-    <a href="{{route('about')}}">click Here To Go To About US</a>
     <div class="container">
+        <h1 class="mt-4 mb-4">Edit your details</h1>
         {!! session('msg') !!}
             <form action="{{ route('updateUser', $data->id)}}" method="post">
                 @csrf
@@ -29,7 +28,6 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input type="email" name="email"  value="{{ $data->email }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="container">
                 <div class="form-check">
