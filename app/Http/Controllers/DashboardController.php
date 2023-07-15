@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Hostel;
 use App\Models\Classes;
-use App\Models\Subject;
+use App\Models\Result;
 use App\Models\Teacher;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -38,9 +38,7 @@ class DashboardController extends Controller
           return back()->with("msg", "<div class='alert alert-success'> <span> Welcome to your profile page </span> </div>");
         }
 
-    public function result(Request $request){
-        return view('result');
-    }
+ 
 
     public function adminAccess(Request $request){
         return view('adminAccess');
@@ -59,7 +57,7 @@ class DashboardController extends Controller
 //         $data = User::where('id', '=', session::get('loginId'))->first();
 //         $data2 = Hostel::where('id', '=', session::get('loginId'))->first();
 //         $data3 = classes::where('id', '=', session::get('loginId'))->first();
-//         dd($data3->all());
+//        
 //         $data4 = Teacher::where('id', '=', session::get('loginId'))->first();
 //     }
 //     return view('dashboard', compact('data', 'data2', 'data3', 'data4'));
@@ -80,6 +78,7 @@ public function dashboard(){
         return redirect()->route('login');
     }
 }
+
 
 
 }

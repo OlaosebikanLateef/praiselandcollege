@@ -13,8 +13,9 @@
 <!-- blank col -->
         </div>
         <div class="col-md-6 bg-secondary-subtle border rounded mt-2">
+        {!! session('msg') !!}
                         <form action="{{'submitResult'}}" method="post">
-                        <h1 class="mt-2">Enter Student Result</h1>
+                        <h3 class="mt-2">Enter Student Result</h3>
                         @csrf
                         <!-- <div class="form-group mt-3">
                             <label for="studentID" >Student ID:</label>
@@ -23,20 +24,23 @@
                     
                         <div class="form-group mt-3">
                             <label for="subject">Subject Name</label>
-                            <select name="subject_name" id="subject" class="form-control">
+                            <select name="subject_id" id="subject" class="form-control">
                                 @foreach($subject as $subjects)
                                 <option value="{{$subjects->id}}">{{ $subjects->subject_name}}</option>
                                 @endforeach
                             </select>
+                            <span class="text-danger">@error('subject_id') {{$message}} @enderror</span>
                                
                         </div>
                         <div class="form-group mt-3">
                             <label for="exam">Exam Score:</label>
                             <input type="number" name="exam"  id="exam" class="form-control" onchange="addScore()">
+                            <span class="text-danger">@error('exam') {{$message}} @enderror</span>
                         </div>
                         <div class="form-group mt-3">
                             <label for="test">Test</label>
                             <input type="number" name="test" id="test" class="form-control" onchange="addScore()">
+                            <span class="text-danger">@error('test') {{$message}} @enderror</span>
                         </div>
                         <div class="form-group mt-3">
                             <label for="test">Total</label>

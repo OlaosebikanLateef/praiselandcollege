@@ -46,7 +46,9 @@ Route::get('/profile', [DashboardController::class, 'profile'])->name('profile')
 
 Route::get('/userProfile/{id}', [DashboardController::class, 'userProfile'])->name('userProfile');
 
-Route::get('/result', [DashboardController::class, 'result'])->name('result');
+Route::get('/result', [ResultController::class, 'result'])->name('result');
+
+Route::get('/results', [ResultController::class, 'viewResult'])->name('viewResult');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -61,4 +63,6 @@ Route::get('/resultUpload', [ResultController::class, 'resultUpload'])->name('re
 Route::post('/submitResult', [ResultController::class, 'submitResult'])->name('submitResult');
 
 Route::post('/login2', [LoginController::class, 'login2'])->name('login2');
+
+
 

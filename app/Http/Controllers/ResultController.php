@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Result;
 use App\Models\subject;
+use App\Models\User;
+use Illuminate\support\Facades\Auth;
 
 class ResultController extends Controller
 {
@@ -15,53 +17,54 @@ class ResultController extends Controller
 
     return view('resultUpload')->with(['subject'=> $subject]);
 }
-        
+   
+
+
+        public function result(Request $request){
+         $user = Auth::user();
+
+        // $result = Result::all();
+        $result = Result::where('user_id', $user->id)->get();
+       // $subject = Subject::where('id', $result->subject_id)->get();
+           // return view('results', compact('data', 'result'));
+            return view('results', compact('user', 'result'));
+    }
     
+
 
     public function submitResult(Request $request){
-          //  dd($request->all());
-        $attribute = $request->validate([    
-        'subject_id'=>'required',   
-        'exam'=>'required',
-        'test'=>'required',
-        'total'=>'required',
-        'grade'=>'required',
-        'user_id'=>'required'
-
-        ]);
-
-        result::create([
-            'subject_id'=>$request->subject_id,
-            'exam'=>$request->exam, 
-            'test'=>$request->test,
-            'total'=>$request->total,
-            'grade'=>$request->grade,
-            'user_id'=>$request->user_id
+       
+        $attributes = $request->validate([
+            'subject_id' => 'required',
+            'exam' => 'required',
+            'test' => 'required',
+            'total' => 'required',
+            'grade' => 'required',
+            'user_id'=>'required'
         ]);
        
-        return back()->with("msg", "<div class='alert alert-success'> <span>Submitted Successfully </span> </div>");
+        Result::create([
+                'subject_id'=>$request->subject_id,
+                'exam'=>$request->exam, 
+                'test'=>$request->test,
+                'total'=>$request->total,
+                'grade'=>$request->grade,
+                'user_id'=>$request->user_id,
+               
+        ]);
+    
+        return back()->with('msg', '<div class="alert alert-success"><span>Result Submitted Successfully</span></div>');
     }
-   
-    //     $attributes = $request->validate([
-    //         dd($request->all());
-    //         'subject_id' => 'required',
-    //         'exam' => 'required',
-    //         'test' => 'required',
-    //         'total' => 'required',
-    //         'grade' => 'required'
-    //     ]);
-    
-    //     Result::create([
+
+ 
+    public function viewResult(){
         
-    //         'subject_id' => $request->input('subject_id'),
-    //         'exam' => $request->input('exam'),
-    //         'test' => $request->input('test'),
-    //         'total' => $request->input('total'),
-    //         'grade' => $request->input('grade')
-    //     ]);
+        $datas = Result::get();
+        
+        return view('results', compact('datas'));
+       } 
+
     
-    //     return back()->with('msg', '<div class="alert alert-success"><span>Submitted Successfully</span></div>');
-    // }
 
 
 }

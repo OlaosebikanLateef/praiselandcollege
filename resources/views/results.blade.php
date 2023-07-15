@@ -50,40 +50,30 @@
           <thead class="table-primary">
       
             <tr>
-              <th scope="col">Result ID</th>
+              
               <th scope="col">First Name</th>
               <th scope="col">Last Name</th>
+              <th scope="col">Subject</th>
               <th scope="col">Exam Score</th>
               <th scope="col">Test Score</th>
+              <th scope="col">Total</th>
               <th scope="col">Grade</th>
             </tr>
           </thead>
           <tbody>
+         
+          @foreach($result as $result)
             <tr>
-              <th scope="row">1</th>
-              <td>Lateef</td>
-              <td>Olaosebikan</td>
-              <td>0</td>
-              <td>0</td>
-              <td>A</td>
+              <td>{{ $user->firstName}}</td>
+              <td>{{ $user->lastName}}</td>
+              <td>{{$result->subject_id}}</td>
+              <td>{{$result->exam}}</td>
+              <td>{{$result->test}}</td>
+              <td>{{$result->total}}</td>
+              <td>{{$result->grade}}</td>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Lateef</td>
-              <td>Olaosebikan</td>
-              <td>0</td>
-              <td>0</td>
-              <td>A</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Lateef</td>
-              <td>Olaosebikan</td>
-              <td>0</td>
-              <td>0</td>
-              <td>A</td>
-            </tr>
-            
+            @endforeach
+        
           </tbody>
         </table>
       </div>
