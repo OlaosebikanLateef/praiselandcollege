@@ -5,6 +5,7 @@ use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -29,7 +30,6 @@ Route::get('/signup', [SignUpController::class, 'signup'])->name('signup');
 
 Route::post('/submitSignUp', [SignupController::class, 'submitSignUp'])->name('submitSignUp');
 
-Route::get('/getUsers', [UserController::class, 'getUsers'])->name('getUsers');
 
 Route::get('/editUsers/{id}', [UserController::class, 'editUsers'])->name('editUsers')->middleware('auth');
 
@@ -40,7 +40,7 @@ Route::put('/updateUser/{id}', [UserController::class, 'updateUser'])->name('upd
 
 Route::post('/submitLogin', [LoginController::class, 'submitLogin'])->name('submitLogin');
 
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+
 
 Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
 
@@ -58,11 +58,29 @@ Route::get('/adminLogin', [LoginController::class, 'adminLogin'])->name('adminLo
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/resultUpload', [ResultController::class, 'resultUpload'])->name('resultUpload');
+
 
 Route::post('/submitResult', [ResultController::class, 'submitResult'])->name('submitResult');
 
 Route::post('/login2', [LoginController::class, 'login2'])->name('login2');
 
 
+Route::get('/loginn', [LoginController::class, 'loginn'])->name('loginn');
 
+//admin
+
+Route::group(['middleware' => 'user'], function (){
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+});
+
+Route::group(['middleware' => 'admin'], function (){
+
+    Route::get('/getUsers', [UserController::class, 'getUsers'])->name('getUsers');
+
+    Route::get('/resultUpload', [ResultController::class, 'resultUpload'])->name('resultUpload');
+
+});
+
+
+//logout
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');

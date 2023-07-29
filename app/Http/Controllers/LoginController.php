@@ -23,9 +23,9 @@ class LoginController extends Controller
            return view('adminLogin');
        }
 
-       public function login2(Request $request)
+       public function loginn(Request $request)
        {
-           return view('login2');
+           return view('loginn');
        }
 //login function (query must be written to validate the data and adding 'use Illuminate\Support\Facades\Auth;' )
 // public function submitLogin(Request $request){
@@ -84,8 +84,28 @@ class LoginController extends Controller
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
+            if(Auth::user()->user_type == 1){
+                return redirect()->intended('dashboard');
+            }
+
+            else if(Auth::user()->user_type == 2){
+                return redirect()->intended('getUsers');
+            }
+
+            else if(Auth::user()->user_type == 2){
+                return redirect()->intended('resultUpload');
+            }
+
+            else if(Auth::user()->user_type == 2){
+                return redirect()->intended('resultUpload');
+            }
+
+            else if(Auth::user()->user_type == 1){
+                return redirect()->intended('results');
+            }
  
-            return redirect()->intended('dashboard');
+            //return redirect()->intended('dashboard');
         }
  
         return back()->withErrors([

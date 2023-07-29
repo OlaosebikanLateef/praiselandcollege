@@ -50,7 +50,7 @@
           <thead class="table-primary">
       
             <tr>
-              
+            <th scope="col">S/N</th>
               <th scope="col">First Name</th>
               <th scope="col">Last Name</th>
               <th scope="col">Subject</th>
@@ -60,10 +60,14 @@
               <th scope="col">Grade</th>
             </tr>
           </thead>
+          @php 
+          $number = 1;
+          @endphp
           <tbody>
          
           @foreach($result as $result)
             <tr>
+              <td>{{ $number++ }} </td>
               <td>{{ $user->firstName}}</td>
               <td>{{ $user->lastName}}</td>
               <td>{{$result->subject_id}}</td>

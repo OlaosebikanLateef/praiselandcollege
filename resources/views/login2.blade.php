@@ -77,12 +77,12 @@ form{
               <h4 class="text-center">Login Here</h4>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                   <span class="text-danger">@error('email') {{$message}} @enderror</span>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" name="password" class="form-control" id="password" >
+                  <input type="password" class="form-control" id="password" >
                   <span class="text-danger">@error('password') {{$message}} @enderror</span>
                 </div>
                 <div class="form-check mt-2">
