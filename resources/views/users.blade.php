@@ -13,6 +13,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<style> 
+    /* Add a black background color to the top navigation */
+.topnav {
+
+  border: white;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+</style>
+
   </head>
   <body> 
     <!-- Nav -->
@@ -30,7 +55,7 @@
               </li>
             </ul>
           </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse justify-content-end topnav" id="navbarSupportedContent">
             <ul class="navbar-nav ">
               <li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="{{ route('home')}}">Home</a>
@@ -54,90 +79,71 @@
 
   <!-- section 1 -->
   <div class="container mt-3 mb-3">
+
+
+
+
+
+
      <h5 class="card-text" id="greetings">, </h5>
   </div>
   <div class="container alert alert-warning alert-dismissible fade show mt-2" role="alert">   <!-- alert -->
-      <h4 class="alert-heading">Welcome!</h4>
+      <h4 class="alert-heading">Welcome! {{ $user->firstName }}</h4>
         You can now access admin dashboard.
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
     <!--end of section 1  -->
-<div class="container">  
-  
-</div>
+
 <!-- users section -->
 
   
  
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
-        <table class="table table-borderless">
-  <thead>
-    <tr>
-      <th scope="col">S/N</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Action</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-    @php 
-    $number = 1;
-    @endphp
-  <tbody>
-    @foreach($data as $user)
-    <tr>
-        <td> {{ $number++ }} </td>
-        <td> {{ $user->firstName }} </td>
-        <td> {{ $user->lastName }} </td>
-        <td> {{ $user->email }} </td>
-        <td> {{ $user->gender }} </td>
-        <td><a href="{{ route('editUsers', $user->id)}}" class="btn btn-primary">    <i class="fa-regular fa-pen-to-square"></i>   </a> </td>
-        <td><a href="{{ route('deleteUser', $user->id)}}" class="btn btn-danger">  <i class="fa-solid fa-trash"></i>  </a></td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
+        <div class="">
+          <div class="card">
+          <h3 class="card header">Users</h3>
+            <div class="card-body">
+             <table class="table table-bordered table-sm">
+              <thead class="">
+                <tr>
+                  <th scope="col">S/N</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Action</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+                @php 
+                $number = 1;
+                @endphp
+              <tbody>
+                @foreach($data as $user)
+                <tr>
+                    <td> {{ $number++ }} </td>
+                    <td> {{ $user->firstName }} </td>
+                    <td> {{ $user->lastName }} </td>
+                    <td> {{ $user->email }} </td>
+                    <td> {{ $user->gender }} </td>
+                    <td><a href="" class="btn btn-primary" data-mdb-toggle="tooltip" title="Edit"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">    <i class="fa-regular fa-pen-to-square"></i>   </a> </td>
+                    <td><a href="{{ route('deleteUser', $user->id)}}" data-mdb-toggle="tooltip" title="Delete" class="btn btn-danger"  >  <i class="fa-solid fa-trash"></i>  </a></td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
         </div>
+      </div>
+  </div> 
         <!-- col 2 -->
-        <div class="col-md-6">
-        <table class="table table-borderless">
-  <thead>
-    <tr>
-      <th scope="col">S/N</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Action</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-    @php 
-    $number = 1;
-    @endphp
-  <tbody>
-    @foreach($data as $user)
-    <tr>
-        <td> {{ $number++ }} </td>
-        <td> {{ $user->firstName }} </td>
-        <td> {{ $user->lastName }} </td>
-        <td> {{ $user->email }} </td>
-        <td> {{ $user->gender }} </td>
-        <td><a href="{{ route('editUsers', $user->id)}}" class="btn btn-primary">    <i class="fa-regular fa-pen-to-square"></i>   </a> </td>
-        <td><a href="{{ route('deleteUser', $user->id)}}" class="btn btn-danger">  <i class="fa-solid fa-trash"></i>  </a></td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
-        </div>
-    </div>
+        
+        
+    
 </div>
 
-
+</div>
 
 <!-- end of users section -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

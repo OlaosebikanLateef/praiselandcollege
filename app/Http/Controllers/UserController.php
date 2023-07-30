@@ -10,7 +10,8 @@ class UserController extends Controller
 {
     public function getUsers(Request $request){
         $data = User::get();
-        return view('users')->with(['data'=>$data]);
+        $user = Auth::user();
+        return view('users', compact('user'))->with(['data'=>$data]);
     }                     
    
     public function deleteUser(Request $request, $id){

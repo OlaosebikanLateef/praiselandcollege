@@ -94,8 +94,7 @@ form{
                   Login
                 </button>
                 <p class="mt-3">Don't have an account? <a href="{{ route('signup')}}">Sign Up Here</a></p>
-              <p> <a href="{{ route('adminLogin')}}">Login as an admin</a></p>
-              <p><a href="{{ route('home')}}">Go Home </a></p>
+              <p><a href="{{ route('home')}}">Take Me Home </a></p>
         </form>
         </div>   
 
