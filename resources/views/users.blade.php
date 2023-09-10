@@ -79,26 +79,23 @@
 
   <!-- section 1 -->
   <div class="container mt-3 mb-3">
-
-
-
-
-
-
-     <h5 class="card-text" id="greetings">, </h5>
-  </div>
-  <div class="container alert alert-warning alert-dismissible fade show mt-2" role="alert">   <!-- alert -->
+  <div class=" alert alert-warning alert-dismissible fade show mt-2" role="alert">   <!-- alert -->
       <h4 class="alert-heading">Welcome! {{ $user->firstName }}</h4>
         You can now access admin dashboard.
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
+
+
+
+  </div>
+ 
     <!--end of section 1  -->
 
 <!-- users section -->
 
   
  
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="">
           <div class="card">
@@ -127,8 +124,8 @@
                     <td> {{ $user->lastName }} </td>
                     <td> {{ $user->email }} </td>
                     <td> {{ $user->gender }} </td>
-                    <td><a href="" class="btn btn-primary" data-mdb-toggle="tooltip" title="Edit"
-                    data-bs-toggle="modal" data-bs-target="#exampleModal">    <i class="fa-regular fa-pen-to-square"></i>   </a> </td>
+                    <td><a href="{{ route('editUsers', $user->id)}}" class="btn btn-primary" data-mdb-toggle="tooltip" title="Edit"> 
+                     <i class="fa-regular fa-pen-to-square"></i>   </a> </td>
                     <td><a href="{{ route('deleteUser', $user->id)}}" data-mdb-toggle="tooltip" title="Delete" class="btn btn-danger"  >  <i class="fa-solid fa-trash"></i>  </a></td>
                 </tr>
                 @endforeach
